@@ -1,0 +1,24 @@
+<button (click)="toggleMenu()" class="hamburger">
+  <span>toggle menu</span>
+</button>
+<side-bar [@slideInOut]="menuState"></side-bar>
+<p class="myprofile-message">
+  Welcome to Admin profile page!
+</p>
+<h2 class="admin-profile">Admin Profile Information</h2>
+
+<div class="personal-info">
+  <img class="user-img" src="../../assets/images/user_placeholder.png" alt="John">
+  <div class="container">
+    <h1>{{name}}</h1>
+    <p class="title">{{designation}}</p>
+    <p>{{company}}</p>
+    <div style="margin: 24px 0;">
+      <a [routerLink]="['/myprofile']"><i class="fa fa-twitter"></i></a>  
+      <a [routerLink]="['/myprofile']"><i class="fa fa-linkedin"></i></a>  
+      <a [routerLink]="['/myprofile']"><i class="fa fa-facebook"></i></a> 
+   </div>
+   <p><button>Contact</button></p>
+  </div>
+</div>
+

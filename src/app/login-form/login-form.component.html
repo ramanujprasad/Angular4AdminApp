@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" (ngSubmit)="onFormSubmitted(loginForm.value)">  
+  <div class="login-title">
+    <h2>Login</h2>
+  </div>
+  <p class="help-block" *ngIf="mismatch">Oops, credentials mismatch!</p>
+  <div class="input">
+    <label class="login-username-label">Username</label>
+    <input type="text" class="login-username-input" formControlName="username">
+    <div [hidden]="loginForm.controls.username.valid || loginForm.controls.username.untouched">
+      <div [hidden]="!loginForm.controls.username.hasError('required')" class="help-block username-req">
+        Username is required!
+      </div>
+    </div>
+  </div>
+  <div class="input">
+    <label class="login-password-label">Password</label>
+    <input type="text" class="login-password-input" formControlName="password">
+    <div [hidden]="loginForm.controls.password.valid || loginForm.controls.password.untouched">
+      <div [hidden]="!loginForm.controls.password.hasError('required')" class="help-block password-req">
+        Password is required!
+      </div>
+    </div>
+  </div>
+  <span class="hint">Username/Password: admin</span>
+  <div>
+    <button type="submit" class="btn login-btn" [disabled]="loginForm.invalid">Login</button>    
+    <a [routerLink]="['/register']" class="btn register-link">Register</a>
+  </div>
+</form>
