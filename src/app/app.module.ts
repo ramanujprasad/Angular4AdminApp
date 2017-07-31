@@ -12,23 +12,7 @@ import { UserService } from './services/user.service';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-const appRoutes:Routes = [
-  {
-    path: '',
-    component: LoginFormComponent
-  },
-  {
-    path: 'register',
-    component: RegisterFormComponent
-  },
-  {
-    path: 'myprofile',
-    canActivate: [AuthguardGuard],
-    component: MyprofileComponent
-  }
-]
-
+import { appRoutes } from '../route/route';
 
 @NgModule({
   declarations: [
