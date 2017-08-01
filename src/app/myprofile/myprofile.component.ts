@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {UserService} from '../services/user.service';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { trigger,state,style,transition,animate,keyframes } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-myprofile',
@@ -20,38 +20,34 @@ import { trigger,state,style,transition,animate,keyframes } from '@angular/anima
     ]),
   ]
 })
-export class MyprofileComponent implements OnInit {
-  name: string; 
+export class MyprofileComponent {
+  name: string;
   designation: string;
   company: string;
-	email: string;
-  address: address;
-  menuState:string = 'out';
+  email: string;
+  address: Address;
+  menuState: string = 'out';
 
-  toggleMenu() {
+  constructor(private user: UserService) {
+    this.name = 'Amit Agarwal',
+    this.email = 'amitagrwal@test.com',
+    this.designation = 'Project Manager',
+    this.company = 'Microsoft',
+		this.address = {
+      street: '295 Groenhof',
+      city: 'Amstelveen',
+      state: 'NL'
+		};
+   }
+  toggleMenu () {
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
 
-  constructor(private user: UserService) {
-    this.name = 'Amit Agarwal'; 
-    this.email="amitagrwal@test.com",
-    this.designation = "Project Manager",
-    this.company = "Microsoft",
-    
-		this.address = {
-			street: '295 Groenhof',
-			city: 'Amstelveen',
-			state: 'NL'
-		}
-   }
-
-  ngOnInit() {
-  }
-
 }
 
-interface address {
+interface Address {
 	street: string;
 	city: string;
-	state:string;
+	state: string;
 }
+

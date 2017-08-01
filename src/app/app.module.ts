@@ -16,11 +16,11 @@ import { appRoutes } from '../route/route';
 
 @NgModule({
   declarations: [
-    AppComponent, 
-    HeaderComponent, 
+    AppComponent,
+    HeaderComponent,
     LoginFormComponent,
-    RegisterFormComponent, 
-    FooterComponent, 
+    RegisterFormComponent,
+    FooterComponent,
     MyprofileComponent,
     SidebarComponent
   ],

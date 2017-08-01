@@ -11,22 +11,25 @@ describe('MyprofileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MyprofileComponent,SidebarComponent ],
-      imports: [
-          RouterTestingModule,BrowserAnimationsModule
+      declarations : [ MyprofileComponent, SidebarComponent ],
+      imports : [
+          RouterTestingModule, BrowserAnimationsModule
       ],
-      providers: [UserService]
+
+      providers : [ UserService ]
+
     })
-    .compileComponents();
+    .compileComponents ();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MyprofileComponent);
+  beforeEach (() => {
+    fixture = TestBed.createComponent (MyprofileComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.detectChanges ();
   });
 
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
 });

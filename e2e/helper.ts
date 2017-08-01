@@ -1,21 +1,21 @@
 import { browser, by, element } from 'protractor';
 
 export class Helper {
-  navigateToLogin() {
+  navigateToLogin () {
     return browser.get('/');
   }
-  navigateToRegister() {
+  navigateToRegister () {
     return browser.get('/register');
   }
 
-  getContentByCss(cssSelector) {
+  getContentByCss (cssSelector) {
     return element(by.css(cssSelector)).getText();
   }
 
-  getContentByClass(classSelector) {
+  getContentByClass (classSelector) {
     return element(by.className(classSelector)).getText();
   }
-  getContentByTagName(tagName){
+  getContentByTagName (tagName) {
     return element(by.tagName(tagName)).getText();
   }
 }

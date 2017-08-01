@@ -3,7 +3,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { RegisterFormComponent } from './register-form.component';
 import { UserService } from '../services/user.service';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 describe('RegisterFormComponent', () => {
   let component: RegisterFormComponent;
@@ -12,16 +12,16 @@ describe('RegisterFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RegisterFormComponent ],
-      imports: [
-          RouterTestingModule,FormsModule,ReactiveFormsModule
+      imports : [
+          RouterTestingModule, FormsModule, ReactiveFormsModule
       ],
       providers: [UserService]
     })
-    .compileComponents();
+    .compileComponents ();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RegisterFormComponent);
+    fixture = TestBed.createComponent (RegisterFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

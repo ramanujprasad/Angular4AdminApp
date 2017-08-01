@@ -3,7 +3,6 @@ import { browser, by, element } from 'protractor';
 
 describe('Registeration Page', () => {
   let page: Helper;
-
   beforeEach(() => {
     page = new Helper();
   });
@@ -14,9 +13,8 @@ describe('Registeration Page', () => {
     page.navigateToLogin();
     browser.sleep(1000);
     element(by.className('register-link')).click();
-
     expect(page.getContentByClass('register-name-label')).toEqual('Full Name');
-    expect(page.getContentByClass('register-email-label')).toEqual('Email');    
+    expect(page.getContentByClass('register-email-label')).toEqual('Email');
     expect(page.getContentByClass('register-username-label')).toEqual('Username');
     expect(page.getContentByClass('register-password-label')).toEqual('Password');
   });
@@ -26,7 +24,7 @@ describe('Registeration Page', () => {
     element(by.className('register-name-input')).sendKeys('');
     element(by.className('register-email-input')).sendKeys('');
     element(by.className('register-username-input')).sendKeys('');
-    element(by.className('register-password-input')).sendKeys('');    
+    element(by.className('register-password-input')).sendKeys('');
     expect(element(by.className('name-req')).isDisplayed()).toBeTruthy();
   });
 
@@ -37,7 +35,6 @@ describe('Registeration Page', () => {
     element(by.className('register-username-input')).sendKeys('admin');
     element(by.className('register-password-input')).sendKeys('admin');
     element(by.className('register-btn')).click();
-
-    expect(page.getContentByCss('header')).toEqual('Admin');    
+    expect(page.getContentByCss('header')).toEqual('Admin');
   });
 });
