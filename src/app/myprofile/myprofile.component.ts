@@ -26,19 +26,19 @@ export class MyprofileComponent {
   company: string;
   email: string;
   address: Address;
-  menuState: string = 'out';
+  menuState = 'out';
 
   constructor(private user: UserService) {
     this.name = 'Amit Agarwal',
     this.email = 'amitagrwal@test.com',
     this.designation = 'Project Manager',
     this.company = 'Microsoft',
-		this.address = {
+    this.address = {
       street: '295 Groenhof',
       city: 'Amstelveen',
       state: 'NL'
-		};
-   }
+    };
+  }
   toggleMenu () {
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
@@ -46,8 +46,7 @@ export class MyprofileComponent {
 }
 
 interface Address {
-	street: string;
-	city: string;
-	state: string;
+  street: string;
+  city: string;
+  state: string;
 }
-
