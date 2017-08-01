@@ -6,7 +6,7 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',
-  styleUrls: ['./myprofile.component.scss'],
+  styleUrls: ['../../assets/styles/admin-side-bar.scss', './myprofile.component.scss'],
   animations: [
     trigger('slideInOut', [
       state('in', style({
@@ -21,6 +21,7 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
   ]
 })
 export class MyprofileComponent {
+  userimg: string;
   name: string;
   designation: string;
   company: string;
@@ -29,6 +30,7 @@ export class MyprofileComponent {
   menuState = 'out';
 
   constructor(private user: UserService) {
+    this.userimg = '../../assets/images/user_placeholder.png',
     this.name = 'Amit Agarwal',
     this.email = 'amitagrwal@test.com',
     this.designation = 'Project Manager',

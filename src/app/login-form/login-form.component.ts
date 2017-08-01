@@ -6,10 +6,10 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.scss']
+  styleUrls: ['../../assets/styles/admin-form.scss']
 })
 export class LoginFormComponent {
-  mismatch = false;
+  hasGlobalError = false;
   loginForm: FormGroup;
   username = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
@@ -25,12 +25,14 @@ export class LoginFormComponent {
   }
 
   onFormSubmitted (value) {
-    if (value['username'] === 'admin' && value['password'] === 'admin') {
-      this.mismatch = false;
+    // This logic is just temporary solution which will be modified later
+    const admin: any[] = JSON.parse(localStorage.getItem('admin')) || [];
+    if (value['username'] === admin['username']  && value['password'] === admin['password']) {
+      this.hasGlobalError = false;
       this.user.setUserLoggedIn();
       this.router.navigate(['myprofile']);
     } else {
-      this.mismatch = true;
+      this.hasGlobalError = true;
     }
   }
 }

@@ -27,7 +27,10 @@ describe('AppComponent', () => {
           FormsModule,
           ReactiveFormsModule
       ],
-      providers : [UserService, AuthguardGuard],
+      providers : [
+        UserService,
+        AuthguardGuard
+      ],
     }).compileComponents();
   }));
 

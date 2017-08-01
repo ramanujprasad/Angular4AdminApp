@@ -1,6 +1,29 @@
+@import '../../assets/styles/common/var';
+.admin-navbar {
+  font-size: $font-medium;
+  color: $admin-white;
+
+  ul {
+    line-height: 3;
+    font-weight: 400;
+    padding-top: 50px;
+    list-style: none;
+
+    li {
+
+      a {
+        color: $admin-white;
+        text-decoration: none;
+      }
+      &:hover, &:active {
+        background: $admin-gray;
+      }
+    }
+  }
+}
 :host {
-  background-color: rgba(12, 12, 12, 0.5);
-  color: #fff;
+  background-color: $background-half-opacity;
+  color: $admin-white;
   position: fixed;
   left: auto;
   top: 77px;
@@ -8,24 +31,4 @@
   bottom: 63px;
   width: 20%;
   min-width: 250px;
-  z-index: 9999;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-}
-
-ul {
-  font-size: 18px;
-  line-height: 3;
-  font-weight: 400;
-  padding-top: 50px;
-  list-style: none;
-}
-
-.navigation-bar li {
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-  &:hover, &:active {
-    background: #3a3633;
-  }
 }

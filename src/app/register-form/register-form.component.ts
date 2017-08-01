@@ -5,7 +5,7 @@ import { UserService } from '../services/user.service';
 
 @Component({
     templateUrl: './register-form.component.html',
-    styleUrls: ['./register-form.component.scss']
+    styleUrls: ['../../assets/styles/admin-form.scss']
 })
 
 export class RegisterFormComponent {
