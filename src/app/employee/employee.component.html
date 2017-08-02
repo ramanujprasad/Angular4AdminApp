@@ -1,0 +1,28 @@
+<div class="employee">
+  <div class="employee__content employee-content">
+    <div class="employee__img post-thumb">
+      <img class="post-img" [src]="employee.userimg" />
+    </div>
+    <div class="employee__container container">
+      <div>
+        <h3>Name: {{ employee.name }}</h3>
+        <p> Designation: {{ employee.designation }}</p>
+      </div>
+      <div>
+        <h3>Email: {{ employee.email }}</h3>
+        <p>Phone: {{ employee.phone }}</p>
+      </div>    
+      <div>
+        <h3>Company: {{ employee.company }}</h3>
+        <p class="employee__status employee-body" [class.employee__status--flagged]="isReported">
+          {{!isReported ? employee.status : "Inactive"}}
+        </p>
+      </div>
+  </div>
+    
+  </div>
+  <div class="employee__actions employee-actions">
+    <button class="employee__btn btn" (click)="deleteEmployee()">Delete</button>
+    <button class="employee__btn btn" (click)="changeStatus()">Change status</button>
+  </div>
+</div>

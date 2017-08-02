@@ -10,6 +10,7 @@ import { AuthguardGuard } from './services/authguard.guard';
 import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -20,7 +21,8 @@ describe('AppComponent', () => {
         LoginFormComponent,
         FooterComponent,
         MyprofileComponent,
-        SidebarComponent
+        SidebarComponent,
+        EmployeeComponent
       ],
       imports : [
           RouterTestingModule,

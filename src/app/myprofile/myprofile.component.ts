@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
-import {UserService} from '../services/user.service';
+import { Component, OnInit } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { EmployeesInterface } from '../interfaces/employees.interface';
+import { employees } from '../mock-data/employees';
 
 @Component({
   selector: 'app-myprofile',
@@ -19,36 +20,24 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
       transition('out => in', animate('400ms ease-in-out'))
     ]),
   ]
+
 })
-export class MyprofileComponent {
-  userimg: string;
-  name: string;
-  designation: string;
-  company: string;
-  email: string;
-  address: Address;
+export class MyprofileComponent implements OnInit {
+
+  employees: EmployeesInterface[] = [];
   menuState = 'out';
 
-  constructor(private user: UserService) {
-    this.userimg = '../../assets/images/user_placeholder.png',
-    this.name = 'Amit Agarwal',
-    this.email = 'amitagrwal@test.com',
-    this.designation = 'Project Manager',
-    this.company = 'Microsoft',
-    this.address = {
-      street: '295 Groenhof',
-      city: 'Amstelveen',
-      state: 'NL'
-    };
+  constructor () {}
+
+  ngOnInit () {
+    this.employees = employees;
   }
+
+  onEmployeeDelete(deletedEmployee) {
+    this.employees = this.employees.filter (employee => employee !== deletedEmployee);
+  }
+
   toggleMenu () {
     this.menuState = this.menuState === 'out' ? 'in' : 'out';
   }
-
-}
-
-interface Address {
-  street: string;
-  city: string;
-  state: string;
 }

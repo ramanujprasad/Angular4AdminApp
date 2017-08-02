@@ -3,27 +3,14 @@
     <span>toggle menu</span>
   </button>
   <app-side-bar [@slideInOut]="menuState"></app-side-bar>
-  <p class="admin-profile__message">
-    Welcome to Admin profile page!
-  </p>
   <div class="admin-profile__title">
-    <h2>Admin Profile Information</h2>
+    <h2>Employee Informations</h2>
   </div>
-  <div class="admin-profile__personal-info personal-info">
-    <img class="personal-info__img" [src]="userimg" alt="User Image">
-    <div class="personal-info__details details">
-      <h1 class="details__name">{{name}}</h1>
-      <p class="details__design">{{designation}}</p>
-      <p class="details__company">{{company}}</p>
-      <div class="details__social-info" style="margin: 24px 0;">
-        <a [routerLink]="['/myprofile']"><i class="fa fa-twitter"></i></a>  
-        <a [routerLink]="['/myprofile']"><i class="fa fa-linkedin"></i></a>  
-        <a [routerLink]="['/myprofile']"><i class="fa fa-facebook"></i></a> 
-    </div>
-    <p class="personal-info__details details">
-      <button class="details__contact">Contact</button>
-    </p>
-    </div>
+  <div class="admin-profile__employees">
+    <app-employee
+       *ngFor="let employee of employees"
+        [employee]="employee"
+        (onDelete)="onEmployeeDelete($event)"></app-employee>
   </div>
 </div>
 

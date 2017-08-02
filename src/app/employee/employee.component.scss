@@ -1,0 +1,67 @@
+@import '../../assets/styles/common/var';
+
+.employee {
+  border: 1px solid $admin-brown;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  &__content {
+    flex-grow: 2;
+  }
+
+  &__actions {
+    align-items: stretch;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+  }
+
+  &__btn {
+    align-items: center;
+    background-color: $admin-lightbrown;
+    border: none;
+    color: $admin-brown;
+    cursor: pointer;
+    display: flex;
+    flex-grow: 1;
+    font-weight: 300;
+    letter-spacing: 1px;
+    outline: none;
+    padding: $admin-base-size*2;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+
+    &:hover {
+     color: $admin-black;
+     background-color: $admin-lightgray;
+    }
+
+    &:active {
+     background-color: $admin-lightgray;
+    }    
+  }
+  
+  &__img {
+      float: left;
+      &>img {
+        width:100px;
+      }
+  }
+
+  &__status--flagged {
+    font-style: italic;
+    color: $admin-red;
+    font-weight: bold;
+  }
+  
+  &__container>div {
+    display: inline-block;
+    vertical-align: top;
+    width: 27%;
+    text-align: center;
+  }
+}

@@ -13,6 +13,7 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appRoutes } from '../route/route';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { appRoutes } from '../route/route';
     RegisterFormComponent,
     FooterComponent,
     MyprofileComponent,
-    SidebarComponent
+    SidebarComponent,
+    EmployeeComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

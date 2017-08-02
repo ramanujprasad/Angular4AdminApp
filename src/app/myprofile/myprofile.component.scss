@@ -3,55 +3,9 @@
 .admin-profile {
   color: $admin-white;
   text-align: center;
-
-  &__personal-info {
-    box-shadow: 0 4px 8px 0 rgba(26, 21, 21, 0.57);
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    font-family: arial;
-    animation-fill-mode: forwards;
-    background-color: $background-half-opacity;
-    color: $admin-white;
+  
+  &__employees {
+    background-color: $admin-black;
+    padding: $admin-base-size*3;
   }
-}
-
-.personal-info {
-  padding: 0 16px;
-  &::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  &__img {
-    width: 200px;
-    margin-top: $admin-base-size*3;
-  }
-}
-.details {
-   &__contact {
-      border: none;
-      outline: 0;
-      display: inline-block;
-      padding: 8px;
-      color: $admin-white;
-      background-color: $admin-black;
-      text-align: center;
-      cursor: pointer;
-      width: 100%;
-      font-size: 18px;
-      &:hover {
-        opacity: 0.7;
-      }
-   }
-
-   &__social-info {
-      a {
-        font-size: $font-large;
-        width: 50px;
-        text-align: center;
-        text-decoration: none;
-        color: $admin-white;
-      }
-   }
 }

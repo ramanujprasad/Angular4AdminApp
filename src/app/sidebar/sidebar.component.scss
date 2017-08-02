@@ -2,6 +2,7 @@
 .admin-navbar {
   font-size: $font-medium;
   color: $admin-white;
+  text-align: left;
 
   ul {
     line-height: 3;
@@ -22,7 +23,7 @@
   }
 }
 :host {
-  background-color: $background-half-opacity;
+  background-color: $admin-blue;
   color: $admin-white;
   position: fixed;
   left: auto;
