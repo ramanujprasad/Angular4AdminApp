@@ -1,8 +1,11 @@
+
+@import '../assets/styles/common/var';
+
 .admin-component {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 	background-image: url(../assets/images/backgroundImg.png);
     background-size: cover;
-    width: 100%;
+    width: $admin-base-percent*5;
 }

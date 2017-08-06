@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -11,6 +11,9 @@ import { UserService } from './services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { TranslationProvider } from './internationalization/translations';
+import { TranslatePipe } from './internationalization/translate.pipe';
+import { TranslateService } from './services/translate.service';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -22,7 +25,8 @@ describe('AppComponent', () => {
         FooterComponent,
         MyprofileComponent,
         SidebarComponent,
-        EmployeeComponent
+        EmployeeComponent,
+        TranslatePipe
       ],
       imports : [
           RouterTestingModule,
@@ -31,7 +35,9 @@ describe('AppComponent', () => {
       ],
       providers : [
         UserService,
-        AuthguardGuard
+        AuthguardGuard,
+        TranslateService,
+        TranslationProvider
       ],
     }).compileComponents();
   }));

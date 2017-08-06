@@ -7,7 +7,7 @@ import { employees } from '../mock-data/employees';
 @Component({
   selector: 'app-myprofile',
   templateUrl: './myprofile.component.html',
-  styleUrls: ['../../assets/styles/admin-side-bar.scss', './myprofile.component.scss'],
+  styleUrls: ['./myprofile.component.scss'],
   animations: [
     trigger('slideInOut', [
       state('in', style({

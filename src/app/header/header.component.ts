@@ -7,10 +7,10 @@ import { TranslateService } from '../services/translate.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  
+
     public translatedText: string;
     public supportedLanguages: any[];
-  
+
     constructor(private _translate: TranslateService) { }
 
     ngOnInit() {
@@ -20,15 +20,15 @@ export class HeaderComponent implements OnInit {
         { display: 'Dutch', value: 'nl' },
         { display: 'French', value: 'fr' },
       ];
-      
+
       this.selectLang('en');
-        
+
     }
-    
+
     isCurrentLang(lang: string) {
       return lang === this._translate.currentLang;
     }
-    
+
     selectLang(lang: string) {
       // set default;
       this._translate.use(lang);

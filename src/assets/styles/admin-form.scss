@@ -14,7 +14,7 @@
     }
     &__global-error {
         color: $admin-red;
-        font-size: $admin-base-size*4;
+        font-size: $font-medium;
         margin-left: $admin-base-size*2;
     }
 }
@@ -32,7 +32,7 @@
         left: $admin-base-size*2;
         background-color: $background-quarter-opacity;
         padding: 2px 5px;
-        font-size: $admin-base-size*4;
+        font-size: $font-medium;
     }
     
     &__input {

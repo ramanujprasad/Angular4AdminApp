@@ -3,7 +3,7 @@ import { TRANSLATIONS } from '../internationalization/translations'; // import o
 
 @Injectable()
 export class TranslateService {
-	private _currentLang : string;
+	private _currentLang: string;
 
 	public get currentLang () {
 	  return this._currentLang;
@@ -20,8 +20,8 @@ export class TranslateService {
 
 	private translate(key: string): string {
 		// private perform translation
-		let translation = key;
-    
+		const translation = key;
+
     if (this._translations[this.currentLang] && this._translations[this.currentLang][key]) {
 			return this._translations[this.currentLang][key];
 		}
@@ -31,6 +31,6 @@ export class TranslateService {
 
 	public instant(key: string) {
 		// public perform translation
-		return this.translate(key); 
+		return this.translate(key);
 	}
 }

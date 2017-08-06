@@ -14,8 +14,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appRoutes } from '../route/route';
 import { EmployeeComponent } from './employee/employee.component';
-import { TRANSLATION_PROVIDERS }   from './internationalization/translations';
-import { TranslatePipe }   from './internationalization/translate.pipe';
+import { TranslationProvider } from './internationalization/translations';
+import { TranslatePipe } from './internationalization/translate.pipe';
 import { TranslateService } from './services/translate.service';
 
 
@@ -41,8 +41,8 @@ import { TranslateService } from './services/translate.service';
   providers: [
     UserService,
     AuthguardGuard,
-    TRANSLATION_PROVIDERS, 
-    TranslateService 
+    TranslationProvider,
+    TranslateService
   ],
   bootstrap: [
     AppComponent

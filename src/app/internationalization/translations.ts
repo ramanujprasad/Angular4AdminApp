@@ -19,6 +19,4 @@ export const TRANSLATIONS = new OpaqueToken('translations');
 const dictionary = { 'en': LANG_EN_TRANS, 'nl': LANG_NL_TRANS, 'fr': LANG_FR_TRANS };
 
 // providers
-export const TRANSLATION_PROVIDERS = [
-	{ provide : TRANSLATIONS, useValue : dictionary },
-];
+export const TranslationProvider = [{	provide: TRANSLATIONS, useValue: dictionary}];

@@ -9,3 +9,43 @@
     padding: $admin-base-size*3;
   }
 }
+.admin-hamburger {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: $admin-base-size*13;
+  height: $admin-base-size*7;
+  font-size: 0;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: 0;
+  margin-top: -$admin-base-size*11;
+
+  span {
+    display: block;
+    position: absolute;
+    left: $admin-base-size*4;
+    right: $admin-base-size*4;
+    height: $admin-base-size;
+    background: $admin-white;
+
+    &::before, &::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      width: $admin-base-percent*5;
+      height: $admin-base-size;
+      background-color: $admin-white;
+      content: "";
+    }
+
+    &::before {
+      top: -$admin-base-size*2;
+    }
+
+    &::after {
+      bottom: -$admin-base-size*2;
+    }
+  }
+}
