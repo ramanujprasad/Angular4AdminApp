@@ -28,4 +28,4 @@ Run `npm run test-e2e` to execute the end-to-end tests.
 
 ## How design looks like?
 
-![Design Image](https://github.com/ramanujprasad/Angular4AdminApp/blob/master/src/assets/images/Design.JPG)
+![Design Image](https://github.com/ramanujprasad/Angular4AdminApp/blob/master/src/assets/images/Design.png)
