@@ -1,10 +1,10 @@
 <div class="admin-profile">
   <button (click)="toggleMenu()" class="admin-hamburger">
     <span>toggle menu</span>
-  </button>
+  </button>  
   <app-side-bar [@slideInOut]="menuState"></app-side-bar>
   <div class="admin-profile__title">
-    <h2>Employee Informations</h2>
+    <h2>{{'admin.myprofile.title' | translate}}</h2>
   </div>
   <div class="admin-profile__employees">
     <app-employee

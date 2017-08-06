@@ -1,5 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 import { HeaderComponent } from './header.component';
+import { TranslateService } from '../services/translate.service';
+import { TranslatePipe }   from '../internationalization/translate.pipe';
+import { TRANSLATION_PROVIDERS }   from '../internationalization/translations';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -7,7 +10,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
+      declarations: [ HeaderComponent, TranslatePipe ],
+      providers: [TranslateService ]
     })
     .compileComponents();
   }));

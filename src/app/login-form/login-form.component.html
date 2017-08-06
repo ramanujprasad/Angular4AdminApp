@@ -1,28 +1,28 @@
 <form [formGroup]="loginForm" class="admin-form" (ngSubmit)="onFormSubmitted(loginForm.value)">  
   <div class="admin-form__title">
-    <h2>Login</h2>
+    <h2>{{'admin.login.title' | translate}}</h2>
   </div>
-  <p class="admin-form__global-error" *ngIf="hasGlobalError">Oops, credentials mismatch!</p>
+  <p class="admin-form__global-error" *ngIf="hasGlobalError">{{'admin.login.global.error' | translate}}</p>
   <div class="admin-form__row admin-row">
-    <label class="admin-row__label">Username</label>
+    <label class="admin-row__label">{{'admin.login.label.username' | translate}}</label>
     <input type="text" class="admin-row__input" formControlName="username">
     <div [hidden]="loginForm.controls.username.valid || loginForm.controls.username.untouched">
       <div [hidden]="!loginForm.controls.username.hasError('required')" class="admin-row__req-error">
-        Username is required!
+       {{'admin.login.required.error.username' | translate}}
       </div>
     </div>
   </div>
   <div class="admin-form__row admin-row">
-    <label class="admin-row__label">Password</label>
-    <input type="text" class="admin-row__input" formControlName="password">
+    <label class="admin-row__label">{{'admin.login.label.password' | translate}}</label>
+    <input type="password" class="admin-row__input" formControlName="password">
     <div [hidden]="loginForm.controls.password.valid || loginForm.controls.password.untouched">
       <div [hidden]="!loginForm.controls.password.hasError('required')" class="admin-row__req-error">
-        Password is required!
+        {{'admin.login.required.error.password' | translate}}
       </div>
     </div>
   </div>
   <div class="admin-form__row admin-row">
-    <button type="submit" class="admin-row__btn" [disabled]="loginForm.invalid">Login</button>    
-    <a [routerLink]="['/register']" class="admin-row__link">Register</a>
+    <button type="submit" class="admin-row__btn" [disabled]="loginForm.invalid">{{'admin.login.btn.login' | translate}}</button>    
+    <a [routerLink]="['/register']" class="admin-row__link">{{'admin.login.btn.register' | translate}}</a>
   </div>
 </form>

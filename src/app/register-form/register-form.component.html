@@ -1,51 +1,51 @@
 <form [formGroup]="registerForm" class="admin-form" (ngSubmit)="onFormSubmitted(registerForm.value)">
   <div class="admin-form__title">
-    <h2>Register</h2>
+    <h2>{{'admin.register.title' | translate}}</h2>
   </div>
   <div class="admin-form__row admin-row">
-    <label class="admin-row__label">Full Name</label>
+    <label class="admin-row__label">{{'admin.register.label.name' | translate}}</label>
     <input type="text" class="admin-row__input" formControlName="name">
      <div [hidden]="registerForm.controls.name.valid || registerForm.controls.name.untouched">
       <div [hidden]="!registerForm.controls.name.hasError('required')" class="admin-row__req-error">
-        Name is required!
+        {{'admin.register.required.error.name' | translate}}
       </div>
     </div>
   </div>
   <div class="admin-form__row admin-row">
-    <label class="admin-row__label">Email</label>
+    <label class="admin-row__label">{{'admin.register.label.email' | translate}}</label>
     <input type="text" class="admin-row__input" formControlName="email">
      <div [hidden]="registerForm.controls.email.valid || registerForm.controls.email.untouched">
       <div [hidden]="!registerForm.controls.email.hasError('required')" class="admin-row__req-error">
-        Email is required!
+        {{'admin.register.required.error.email' | translate}}
       </div>
       <div [hidden]="!registerForm.controls.username.hasError('pattern')" class="admin-row__req-error">
-        Oops, wrong pattern buddy!
+        {{'admin.register.patternwrong.error.email' | translate}}
       </div>
     </div>
   </div>
   <div class="admin-form__row admin-row">
-    <label class="admin-row__label">Username</label>
+    <label class="admin-row__label">{{'admin.register.label.username' | translate}}</label>
     <input type="text" class="admin-row__input" formControlName="username">
     <div [hidden]="registerForm.controls.username.valid || registerForm.controls.username.untouched">
       <div [hidden]="!registerForm.controls.username.hasError('required')" class="admin-row__req-error">
-        Username is required!
+        {{'admin.register.required.error.username' | translate}}
       </div>
       <div [hidden]="!registerForm.controls.username.hasError('minlength')" class="admin-row__req-error">
-        At least 5 characters.
+        {{'admin.register.patternwrong.error.username' | translate}}
       </div>
     </div>
   </div>
   <div class="admin-form__row admin-row">
-    <label class="admin-row__label">Password</label>
+    <label class="admin-row__label">{{'admin.register.label.password' | translate}}</label>
     <input type="text" class="admin-row__input" formControlName="password">
     <div [hidden]="registerForm.controls.password.valid || registerForm.controls.password.untouched">
       <div [hidden]="!registerForm.controls.password.hasError('required')" class="admin-row__req-error">
-        Password is required!
+        {{'admin.register.required.error.password' | translate}}
       </div>
     </div>
   </div>
   <div class="admin-form__row admin-row">
-    <button type="submit" class="admin-row__btn" [disabled]="registerForm.invalid">Register</button>
-    <a [routerLink]="['/']" class="admin-row__link">Cancel</a>
+    <button type="submit" class="admin-row__btn" [disabled]="registerForm.invalid">{{'admin.register.btn.register' | translate}}</button>
+    <a [routerLink]="['/']" class="admin-row__link">{{'admin.register.btn.cancel' | translate}}</a>
   </div>
 </form>

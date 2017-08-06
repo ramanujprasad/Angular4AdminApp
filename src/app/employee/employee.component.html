@@ -5,15 +5,15 @@
     </div>
     <div class="employee__container container">
       <div>
-        <h3>Name: {{ employee.name }}</h3>
-        <p> Designation: {{ employee.designation }}</p>
+        <h3>{{'admin.myprofile.employee.label.name' | translate}}: {{ employee.name }}</h3>
+        <p> {{'admin.myprofile.employee.label.designation' | translate}}: {{ employee.designation }}</p>
       </div>
       <div>
-        <h3>Email: {{ employee.email }}</h3>
-        <p>Phone: {{ employee.phone }}</p>
+        <h3>{{'admin.myprofile.employee.label.email' | translate}}: {{ employee.email }}</h3>
+        <p>{{'admin.myprofile.employee.label.phone' | translate}}: {{ employee.phone }}</p>
       </div>    
       <div>
-        <h3>Company: {{ employee.company }}</h3>
+        <h3>{{'admin.myprofile.employee.label.company' | translate}}: {{ employee.company }}</h3>
         <p class="employee__status employee-body" [class.employee__status--flagged]="isReported">
           {{!isReported ? employee.status : "Inactive"}}
         </p>
@@ -22,7 +22,7 @@
     
   </div>
   <div class="employee__actions employee-actions">
-    <button class="employee__btn btn" (click)="deleteEmployee()">Delete</button>
-    <button class="employee__btn btn" (click)="changeStatus()">Change status</button>
+    <button class="employee__btn btn" (click)="deleteEmployee()">{{'admin.myprofile.employee.label.delete' | translate}}</button>
+    <button class="employee__btn btn" (click)="changeStatus()">{{'admin.myprofile.employee.label.changestatus' | translate}}</button>
   </div>
 </div>

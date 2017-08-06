@@ -14,6 +14,10 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { appRoutes } from '../route/route';
 import { EmployeeComponent } from './employee/employee.component';
+import { TRANSLATION_PROVIDERS }   from './internationalization/translations';
+import { TranslatePipe }   from './internationalization/translate.pipe';
+import { TranslateService } from './services/translate.service';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { EmployeeComponent } from './employee/employee.component';
     FooterComponent,
     MyprofileComponent,
     SidebarComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    TranslatePipe
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -35,7 +40,9 @@ import { EmployeeComponent } from './employee/employee.component';
   ],
   providers: [
     UserService,
-    AuthguardGuard
+    AuthguardGuard,
+    TRANSLATION_PROVIDERS, 
+    TranslateService 
   ],
   bootstrap: [
     AppComponent
