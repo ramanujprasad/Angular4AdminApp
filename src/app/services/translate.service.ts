@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { TRANSLATIONS } from '../internationalization/translations';
+import { Translations } from '../internationalization/translations';
 
 @Injectable()
 export class TranslateService {
@@ -9,7 +9,7 @@ export class TranslateService {
 	  return this._currentLang;
 	}
 
-	constructor(@Inject(TRANSLATIONS) private _translations: any) {
+	constructor(@Inject(Translations) private _translations: any) {
 	}
 
 	public use(lang: string): void {

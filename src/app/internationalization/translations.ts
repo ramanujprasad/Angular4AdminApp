@@ -6,7 +6,7 @@ import { LANG_NL_NAME, LANG_NL_TRANS } from '../labels/lang-nl';
 import { LANG_FR_NAME, LANG_FR_TRANS } from '../labels/lang-fr';
 
 // translation token
-export const TRANSLATIONS = new OpaqueToken('translations');
+export const Translations = new OpaqueToken('translations');
 
 // all traslations
 /*const dictionary = {
@@ -17,4 +17,4 @@ export const TRANSLATIONS = new OpaqueToken('translations');
 const dictionary = { 'en': LANG_EN_TRANS, 'nl': LANG_NL_TRANS, 'fr': LANG_FR_TRANS };
 
 // providers
-export const TranslationProvider = [{	provide: TRANSLATIONS, useValue: dictionary}];
+export const TranslationProvider = [{	provide: Translations, useValue: dictionary}];
