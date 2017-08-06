@@ -1,5 +1,3 @@
-// app/translate/translation.ts
-
 import { OpaqueToken } from '@angular/core';
 
 // import translations

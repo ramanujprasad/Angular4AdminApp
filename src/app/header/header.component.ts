@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
     constructor(private _translate: TranslateService) { }
 
     ngOnInit() {
-      // standing data
+      // This data is available in header
       this.supportedLanguages = [
         { display: 'English', value: 'en' },
         { display: 'Dutch', value: 'nl' },
@@ -30,7 +30,7 @@ export class HeaderComponent implements OnInit {
     }
 
     selectLang(lang: string) {
-      // set default;
+      // set default language;
       this._translate.use(lang);
     }
 }

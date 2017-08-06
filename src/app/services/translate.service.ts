@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { TRANSLATIONS } from '../internationalization/translations'; // import our opaque token
+import { TRANSLATIONS } from '../internationalization/translations';
 
 @Injectable()
 export class TranslateService {
@@ -9,7 +9,6 @@ export class TranslateService {
 	  return this._currentLang;
 	}
 
-  // inject our translations
 	constructor(@Inject(TRANSLATIONS) private _translations: any) {
 	}
 
@@ -19,7 +18,6 @@ export class TranslateService {
 	}
 
 	private translate(key: string): string {
-		// private perform translation
 		const translation = key;
 
     if (this._translations[this.currentLang] && this._translations[this.currentLang][key]) {
@@ -30,7 +28,6 @@ export class TranslateService {
 	}
 
 	public instant(key: string) {
-		// public perform translation
 		return this.translate(key);
 	}
 }
