@@ -1,15 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SidebarComponent } from './sidebar.component';
+import { TranslateService } from '../services/translate.service';
+import { TranslatePipe } from '../internationalization/translate.pipe';
+import { TranslationProvider } from '../internationalization/translations';
 
-describe('SidebarComponent', () => {
+describe('Component: SidebarComponent', () => {
   let component: SidebarComponent;
   let fixture: ComponentFixture<SidebarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SidebarComponent ],
-      imports: [RouterTestingModule]
+      declarations: [ SidebarComponent, TranslatePipe ],
+      imports: [RouterTestingModule],
+      providers: [
+            TranslateService,
+            TranslationProvider
+      ]
     })
     .compileComponents();
   }));

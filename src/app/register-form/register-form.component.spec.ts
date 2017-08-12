@@ -4,6 +4,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { RegisterFormComponent } from './register-form.component';
 import { UserService } from '../services/user.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateService } from '../services/translate.service';
+import { TranslatePipe } from '../internationalization/translate.pipe';
+import { TranslationProvider } from '../internationalization/translations';
 
 describe('RegisterFormComponent', () => {
   let component: RegisterFormComponent;
@@ -11,11 +14,20 @@ describe('RegisterFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegisterFormComponent ],
-      imports : [
-          RouterTestingModule, FormsModule, ReactiveFormsModule
+      declarations: [
+          RegisterFormComponent,
+          TranslatePipe
       ],
-      providers: [UserService]
+      imports : [
+          RouterTestingModule,
+          FormsModule,
+          ReactiveFormsModule
+      ],
+      providers : [
+            UserService,
+            TranslateService,
+            TranslationProvider
+      ]
     })
     .compileComponents ();
   }));
@@ -30,3 +42,4 @@ describe('RegisterFormComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+

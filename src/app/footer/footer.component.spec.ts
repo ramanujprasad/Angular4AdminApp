@@ -1,13 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FooterComponent } from './footer.component';
+import { TranslateService } from '../services/translate.service';
+import { TranslatePipe } from '../internationalization/translate.pipe';
+import { TranslationProvider } from '../internationalization/translations';
 
-describe('FooterComponent', () => {
+describe('Component: FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FooterComponent ]
+      declarations: [ FooterComponent, TranslatePipe ],
+      providers: [
+            TranslateService,
+            TranslationProvider
+      ]
     })
     .compileComponents();
   }));
