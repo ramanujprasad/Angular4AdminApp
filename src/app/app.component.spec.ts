@@ -1,4 +1,4 @@
-import { TestBed, async, inject } from '@angular/core/testing';
+import { TestBed, async, inject, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,6 +16,9 @@ import { TranslatePipe } from './internationalization/translate.pipe';
 import { TranslateService } from './services/translate.service';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -42,9 +45,27 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+    fixture = TestBed.createComponent (AppComponent);
+    component = fixture.debugElement.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it(`should create the app`, async(() => {
+    expect(component).toBeTruthy();
   }));
+
+  it(`should set the current language as 'English'`, () => {
+    component.isCurrentLang('en');
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.admin-dropdown__lang-default').textContent).toContain('English');
+  });
+
+  it(`should call the selectLang function as 'English'`, () => {
+    component.selectLang('en');
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.admin-dropdown__lang-default').textContent).toContain('English');
+  });
 });

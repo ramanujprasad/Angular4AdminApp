@@ -1,5 +1,17 @@
 <div class="admin-component">
   <app-header></app-header>
+  <div class="admin-dropdown">
+    <button class="admin-dropdown__dropbtn">Language</button>
+        <i class="fa fa-caret-down admin-dropdow__dropicon" aria-hidden="true"></i>
+        <div class="admin-dropdown__content">
+            <div *ngFor="let lang of supportedLanguages"
+            (click)="selectLang(lang.value)"
+            class="admin-dropdown__lang-default" [class.admin-dropdown__lang-active]="isCurrentLang(lang.value)">
+            {{ lang.display }}
+            </div>
+        </div>
+        
+</div>
 
   <router-outlet></router-outlet>
   

@@ -14,24 +14,28 @@ describe('Login Page', () => {
     page.navigateToLogin();
     browser.sleep(1000);
     expect(page.getContentByCss('header')).toEqual('Admin');
-    expect(page.getContentByClass('login-username-label')).toEqual('Username');
-    expect(page.getContentByClass('login-password-label')).toEqual('Password');
-    expect(page.getContentByCss('footer')).toEqual('©Copyright information');
+    expect(page.getContentByCss('footer')).toEqual('© Copyright information');
   });
 
   it('should show error message for wrong credentials', () => {
 
-    element(by.className('login-username-input')).sendKeys('');
-    element(by.className('login-password-input')).sendKeys('');
-    expect(element(by.className('username-req')).isDisplayed()).toBeTruthy();
+    element(by.css('input[formcontrolname="username"]')).sendKeys('');
+    element(by.css('input[formcontrolname="password"]')).sendKeys('');
+    expect(element(by.className('admin-row__req-error')).isDisplayed()).toBeTruthy();
   });
 
-  it('should navigate to myprofile page', () => {
+  it('should show global error page when admin is not registered', () => {
 
-    element(by.className('login-username-input')).sendKeys('admin');
-    element(by.className('login-password-input')).sendKeys('admin');
-    element(by.className('login-btn')).click();
+    element(by.css('input[formcontrolname="username"]')).sendKeys('admin');
+    element(by.css('input[formcontrolname="password"]')).sendKeys('admin');
+    element(by.className('admin-row__btn')).click();
     browser.sleep(1000);
-    expect(page.getContentByClass('myprofile-message')).toEqual('Welcome to Admin profile page!');
+    expect(page.getContentByClass('admin-form__global-error')).toEqual('Oops, credentials mismatch!');
+  });
+
+  it('should Navigate to register page', () => {
+
+    element(by.className('admin-row__link')).click();
+    expect(element(by.className('admin-row__label')).isDisplayed()).toBeTruthy();
   });
 });

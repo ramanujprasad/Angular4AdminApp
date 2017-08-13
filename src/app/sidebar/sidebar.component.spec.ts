@@ -5,7 +5,7 @@ import { TranslateService } from '../services/translate.service';
 import { TranslatePipe } from '../internationalization/translate.pipe';
 import { TranslationProvider } from '../internationalization/translations';
 
-describe('Component: SidebarComponent', () => {
+describe('SidebarComponent', () => {
   let component: SidebarComponent;
   let fixture: ComponentFixture<SidebarComponent>;
 

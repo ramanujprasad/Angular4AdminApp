@@ -4,17 +4,14 @@ import { TranslateService } from '../services/translate.service';
 import { TranslatePipe } from '../internationalization/translate.pipe';
 import { TranslationProvider } from '../internationalization/translations';
 
-describe('Component: HeaderComponent', () => {
+describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeaderComponent, TranslatePipe ],
-      providers: [
-            TranslateService,
-            TranslationProvider
-      ]
+      providers: [ TranslateService, TranslationProvider ]
     })
     .compileComponents();
   }));
@@ -25,10 +22,13 @@ describe('Component: HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create the app', () => {
-    const translateService = fixture.debugElement.injector.get(TranslateService);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
+  it(`should create the app`, () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should contain header tag`, async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('header')).toBeTruthy();
+  }));
+
 });

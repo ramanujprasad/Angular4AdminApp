@@ -8,9 +8,9 @@ import { EmployeesInterface } from '../interfaces/employees.interface';
 })
 export class EmployeeComponent {
 
-  @Input() private employee: EmployeesInterface;
-  @Output() private onDelete = new EventEmitter();
-  private isReported = false;
+  @Input() employee: EmployeesInterface;
+  @Output() onDelete = new EventEmitter();
+  isReported = false;
 
   changeStatus() {
     this.isReported = !this.isReported;

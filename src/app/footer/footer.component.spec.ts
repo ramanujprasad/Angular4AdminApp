@@ -4,17 +4,14 @@ import { TranslateService } from '../services/translate.service';
 import { TranslatePipe } from '../internationalization/translate.pipe';
 import { TranslationProvider } from '../internationalization/translations';
 
-describe('Component: FooterComponent', () => {
+describe('FooterComponent', () => {
   let component: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ FooterComponent, TranslatePipe ],
-      providers: [
-            TranslateService,
-            TranslationProvider
-      ]
+      providers: [TranslateService, TranslationProvider]
     })
     .compileComponents();
   }));
@@ -25,7 +22,12 @@ describe('Component: FooterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it(`should be created`, () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should contain footer tag`, async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('footer')).toBeTruthy();
+  }));
 });

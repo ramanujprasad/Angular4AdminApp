@@ -10,31 +10,28 @@ describe('Registeration Page', () => {
   /**Register Page**/
   it('should Navigate to register page', () => {
 
-    page.navigateToLogin();
+    page.navigateToRegister();
     browser.sleep(1000);
-    element(by.className('register-link')).click();
-    expect(page.getContentByClass('register-name-label')).toEqual('Full Name');
-    expect(page.getContentByClass('register-email-label')).toEqual('Email');
-    expect(page.getContentByClass('register-username-label')).toEqual('Username');
-    expect(page.getContentByClass('register-password-label')).toEqual('Password');
+    expect(element(by.className('admin-row__label')).isDisplayed()).toBeTruthy();
   });
 
   it('should show error message for wrong credentials', () => {
 
-    element(by.className('register-name-input')).sendKeys('');
-    element(by.className('register-email-input')).sendKeys('');
-    element(by.className('register-username-input')).sendKeys('');
-    element(by.className('register-password-input')).sendKeys('');
-    expect(element(by.className('name-req')).isDisplayed()).toBeTruthy();
+    element(by.css('input[formcontrolname="name"]')).sendKeys('');
+    element(by.css('input[formcontrolname="email"]')).sendKeys('');
+    element(by.css('input[formcontrolname="username"]')).sendKeys('');
+    element(by.css('input[formcontrolname="password"]')).sendKeys('');
+    expect(element(by.className('admin-row__req-error')).isDisplayed()).toBeTruthy();
   });
 
   it('should navigate back to login page', () => {
 
-    element(by.className('register-name-input')).sendKeys('Amit Agarwal');
-    element(by.className('register-email-input')).sendKeys('amitagrwal@test.com');
-    element(by.className('register-username-input')).sendKeys('admin');
-    element(by.className('register-password-input')).sendKeys('admin');
-    element(by.className('register-btn')).click();
+    element(by.css('input[formcontrolname="name"]')).sendKeys('Amit Agarwal');
+    element(by.css('input[formcontrolname="email"]')).sendKeys('amitagrwal@test.com');
+    element(by.css('input[formcontrolname="username"]')).sendKeys('admin');
+    element(by.css('input[formcontrolname="password"]')).sendKeys('admin');
+    element(by.className('admin-row__btn')).click();
     expect(page.getContentByCss('header')).toEqual('Admin');
   });
+
 });
