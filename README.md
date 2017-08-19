@@ -1,6 +1,6 @@
 # AdminApp
 
-This application uses angular 4 created for learning purpose. It has been build using [Angular CLI](https://github.com/angular/angular-cli) version 1.2.3.
+This application uses angular 4 created for learning purpose. It has been build using [Angular CLI](https://github.com/angular/angular-cli) version 1.2.3. This app is available in en/nl/fr languages.
 
 ## Download dependencies
 
