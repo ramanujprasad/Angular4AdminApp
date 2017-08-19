@@ -26,6 +26,10 @@ Run `npm run test-unit` to execute the unit tests
 
 Run `npm run test-e2e` to execute the end-to-end tests.
 
+## Running linting for code
+
+Run `npm run lint` to execute the linting for ts files.
+
 ## How design looks like?
 
 ![Design Image](https://github.com/ramanujprasad/Angular4AdminApp/blob/master/src/assets/images/Design.PNG)
