@@ -30,6 +30,10 @@ Run `npm run test-e2e` to execute the end-to-end tests.
 
 Run `npm run lint` to execute the linting for ts files.
 
+## Published URL
+
+https://ramanujprasad.github.io/Angular4AdminApp/
+
 ## How design looks like?
 
 ![Design Image](https://github.com/ramanujprasad/Angular4AdminApp/blob/master/src/assets/images/Design.PNG)
