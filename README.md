@@ -1,6 +1,6 @@
-# AdminApp
+# Admin App
 
-This application uses angular 4 created for learning purpose. It has been build using [Angular CLI](https://github.com/angular/angular-cli) version 1.2.3. This app is available in en/nl/fr languages.
+This application has login/registration features and once you login, can view employee information. You can also change the status of the employee or remove it from the list. It uses angular 4. It has been build using [Angular CLI](https://github.com/angular/angular-cli) version 1.2.3. This app is available in en/nl/fr languages.
 
 ## Download dependencies
 
