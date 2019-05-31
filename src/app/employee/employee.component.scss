@@ -41,9 +41,9 @@
 
     &:active {
      background-color: $admin-lightgray;
-    }    
+    }
   }
-  
+
   &__img {
       float: left;
       &>img {
@@ -56,11 +56,10 @@
     color: $admin-red;
     font-weight: bold;
   }
-  
+
   &__container>div {
     display: inline-block;
     vertical-align: top;
-    width: $admin-base-percent;
     text-align: center;
   }
 }

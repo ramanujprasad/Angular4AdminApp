@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" class="admin-form" (ngSubmit)="onFormSubmitted(loginForm.value)">  
+<form [formGroup]="loginForm" class="admin-form" (ngSubmit)="onFormSubmitted(loginForm.value)">
   <div class="admin-form__title">
     <h2>{{'admin.login.title' | translate}}</h2>
   </div>
@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="admin-form__row admin-row">
-    <button type="submit" class="admin-row__btn" [disabled]="loginForm.invalid">{{'admin.login.btn.login' | translate}}</button>    
-    <a [routerLink]="['/register']" class="admin-row__link">{{'admin.login.btn.register' | translate}}</a>
+    <button type="submit" class="admin-row__btn" [disabled]="loginForm.invalid">{{'admin.login.btn.login' | translate}}</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a [routerLink]="['/register']" class="admin-row__btn">{{'admin.login.btn.register' | translate}}</a>
   </div>
 </form>
