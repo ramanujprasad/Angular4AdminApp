@@ -1,0 +1,98 @@
+
+@import './common/var';
+
+.admin-form {
+    @include font-noa;
+    animation-fill-mode: forwards;
+    background-color: $background-half-opacity;
+    padding: $admin-base-size*4 $admin-base-size*5;
+    color: $admin-white;
+
+    &__title {
+        text-align: center;
+        margin-top: -$admin-base-size*4;
+    }
+    &__global-error {
+        color: $admin-red;
+        font-size: $font-medium;
+        margin-left: $admin-base-size*2;
+    }
+}
+
+.admin-row {
+    font-size: 18px;
+    outline: 0;
+    position: relative;
+    margin: $admin-base-size*4 0;
+
+    &__label {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        left: $admin-base-size*2;
+        background-color: $background-quarter-opacity;
+        padding: 2px 5px;
+        font-size: $font-medium;
+    }
+
+    &__input {
+        padding: 12px $admin-base-size*4;
+        font-size: $font-medium;
+        outline: 0;
+        color: $admin-white;
+        background-color: $background-half-opacity;
+    }
+
+    &__btn {
+      padding: 12px $admin-base-size*4;
+      font-size: $font-medium;
+      outline: 0;
+      background-color: $background-half-opacity;
+      cursor: pointer;
+      color: $admin-white;
+      border: 1px solid $admin-white;
+      margin-top: -$admin-base-size*2;
+      text-decoration: none;
+
+      &:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+      }
+    }
+
+    &__link {
+      align-items: flex-start;
+      text-align: center;
+      box-sizing: border-box;
+      -webkit-appearance: push-button;
+      user-select: none;
+      white-space: pre;
+      text-decoration: none;
+      border-width: 2px;
+      border-style: outset;
+      border-image: initial;
+      padding: 12px $admin-base-size*5;
+      font-size: $font-medium;
+      color: $admin-white;
+      outline: 0;
+      background-color: $background-half-opacity;
+    }
+
+    &__req-error {
+      color: $admin-red;
+      font-size: $font-medium;
+      margin-left: $admin-base-size*2;
+    }
+}
+:host {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// Mobile view
+@media only screen and (max-width: 678px) {
+  header {
+    font-size: 20px;
+  }
+}

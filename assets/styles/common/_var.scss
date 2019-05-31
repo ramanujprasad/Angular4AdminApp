@@ -1,0 +1,49 @@
+// color
+
+$admin-white: #f0f0f0;
+$admin-black: #0C0C0C;
+$admin-red: #ff0000;
+$admin-gray: #3a3633;
+$admin-lightbrown: #F5F5F5;
+$admin-brown: #999;
+$admin-lightgray: #9d9595;
+$admin-blue: #00a6d8;
+
+$background-half-opacity: rgba(12, 12, 12, 0.5);
+$background-quarter-opacity: rgba(12, 12, 12, 0.75);
+
+// Sizes
+
+$admin-base-size: 5px;
+$admin-base-percent: 20%;
+
+$font-base: 24px;
+$font-extra-small: $font-base / 3; //8px
+$font-small: $font-base / 2;    //12px
+$font-medium: $font-base - 4;  //16px
+$font-large: $font-medium / 3 * 4; //24px
+$font-extra-large: $font-large * 2;  //36px
+
+//Font-weight
+$font-weight-base: 100;
+
+// fallback font family
+$font-family: 'Open Sans';
+
+// Default Font size and family
+@mixin font-noa {
+    font-family: $font-family;
+}
+
+@mixin noa1 {
+    @include font-noa;
+    font-size: $font-extra-small;
+}
+@mixin noa2 {
+    @include font-noa;
+    font-size: $font-small;
+}
+@mixin noa2 {
+    @include font-noa;
+    font-size: $font-medium;
+}
